@@ -1,0 +1,1 @@
+<g:injectGSP instance="${result}"/>

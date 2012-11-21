@@ -1,0 +1,24 @@
+<plugin name='dynamic-themes' version='0.1' grailsVersion='2.1 &gt; *'>
+  <author>Garcia Jaubert, Gonzalo</author>
+  <authorEmail>1973marcos@gmail.com</authorEmail>
+  <title>DynamicThemes Plugin</title>
+  <description>The DynamicThemes plugin allows your Grails application to load externals gsp and css dinamically. It allow you to use a theme folder in any folder and render it. You can process variables and secctions in your gsp. See DynamicThemesTest (https://github.com/gonzalogarciajaubert/DynamicThemesTest)application for examples.
+</description>
+  <documentation>https://github.com/gonzalogarciajaubert/DynamicThemes/wiki</documentation>
+  <type>DynamicThemesGrailsPlugin</type>
+  <resources>
+    <resource>org.gonzalogarciajaubert.dynamicThemes.HowToController</resource>
+    <resource>org.gonzalogarciajaubert.dynamicThemes.ResourceController</resource>
+    <resource>org.gonzalogarciajaubert.dynamicThemes.process.PreprocessorService</resource>
+    <resource>org.gonzalogarciajaubert.dynamicThemes.DynamicThemesTagLib</resource>
+  </resources>
+  <repositories>
+    <repository name='grailsCentral' url='http://grails.org/plugins' />
+    <repository name='http://repo.grails.org/grails/core' url='http://repo.grails.org/grails/core/' />
+    <repository name='mavenCentral' url='http://repo1.maven.org/maven2/' />
+  </repositories>
+  <dependencies />
+  <plugins />
+  <runtimePluginRequirements />
+  <behavior />
+</plugin>
