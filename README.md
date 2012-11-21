@@ -1,0 +1,4 @@
+DynamicThemes
+=============
+
+Grails plugins
