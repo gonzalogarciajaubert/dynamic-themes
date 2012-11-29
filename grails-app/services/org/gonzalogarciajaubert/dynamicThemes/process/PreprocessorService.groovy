@@ -2,6 +2,7 @@ package org.gonzalogarciajaubert.dynamicThemes.process
 
 
 import org.codehaus.groovy.grails.web.mapping.LinkGenerator
+import org.codehaus.groovy.grails.web.context.ServletContextHolder
 
 
 /**
@@ -9,6 +10,8 @@ import org.codehaus.groovy.grails.web.mapping.LinkGenerator
  * @author Gonzalo Garcia Jaubert
  * 
  * HACK: DON'T USE "default" IN THE NAME OF THE TEMPLATE ENGINE!!
+ * TODO: Actually use of 'groovyPagesTemplateEngine' instead of 'groovyPageRenderer'  as it is only compatible with the version 2. And... =>
+ *  => groovyPageRenderer: 'Find a view for a path. For example /foo/bar will search for /WEB-INF/grails-app/views/foo/bar.gsp in production and grails-app/views/foo/bar.gsp at development time' 
  *
  */
 class PreprocessorService {
@@ -22,13 +25,13 @@ class PreprocessorService {
 	/**
 	 * The business logic.
 	 * 
-	 * @param themeName: zip name
+	 * @param themeName: Folder name
 	 * @param sections:	 Elements to replace before processing
-	 * @param variables: Variables to replace
+	 * @param model: Model to replace
 	 * 
 	 * @return preprocessed gsp
 	 */
-    def preprocess(themeName, sections, variables) {
+    def preprocess(themeName, sections, model) {
 		def configParams = getConfigParams(themeName)
 		
 		def output = new StringWriter()
@@ -41,12 +44,13 @@ class PreprocessorService {
 					text = preprocessSections(text, sections)
 			
 			def replace = false
-			if (variables)
-				if (variables.size() > 0)
+			if (model)
+				if (model.size() > 0)
 					replace  = true
 					
 			if (replace) {
-				groovyPagesTemplateEngine.createTemplate(text, "template_${themeName}").make(variables).writeTo(output)
+				grails.gsp.PageRenderer
+				groovyPagesTemplateEngine.createTemplate(text, "template_${themeName}").make(model).writeTo(output)
 			} 
 			else {
 				groovyPagesTemplateEngine.createTemplate(text, "template_${themeName}").make().writeTo(output)
@@ -59,26 +63,26 @@ class PreprocessorService {
 	 * Inject css to an existing gsp
 	 * 
 	 * @param css text
-	 * @param variables: Variables to replace
+	 * @param model: Model to replace
 	 * @return css injected
 	 */
-	def resourceProcessor(css, themeName, variables, ImagesPath) {
+	def resourceProcessor(css, themeName, model, ImagesPath) {
 		def configParams = getConfigParams(themeName)
 		def replace = false
-		if (variables) 
-			if (variables.size() > 0) 
+		if (model) 
+			if (model.size() > 0) 
 				replace  = true
 
 		// Authomatic injection of ImagesPath
 		if (ImagesPath) {
 			def imageMap = ['ImagesPath': configParams.urlFolderImages]
-			variables.putAll(imageMap)
+			model.putAll(imageMap)
 			replace = true
 		}
 		
 		def writer = new StringWriter()
 		if (replace) {
-			groovyPagesTemplateEngine.createTemplate(css,"css_name").make(variables).writeTo(writer)
+			groovyPagesTemplateEngine.createTemplate(css,"css_name").make(model).writeTo(writer)
 		}
 		else {
 			groovyPagesTemplateEngine.createTemplate(css,"css_name").make().writeTo(writer)
@@ -106,22 +110,18 @@ class PreprocessorService {
 	def getConfigParams(themeName) {
 		try {
 			def slash = File.separator
-			
-			def urlThemes = grailsApplication.config.dynamicThemes.preprocessor.urlThemes
-			
-			//def fileSystemPath = grailsApplication.config.dynamicThemes.preprocessor.fileSystemPath
+			def useCacheControl 
+			def urlThemes
 			def fileSystemPath
 			if (grailsApplication.isWarDeployed()) {
-				fileSystemPath = grailsApplication.parentContext.getResource("themes")
+				urlThemes = grailsApplication.config.dynamicThemes.production.preprocessor.urlThemes
+				fileSystemPath = ServletContextHolder.servletContext.getRealPath(grailsApplication.config.dynamicThemes.production.preprocessor.fileSystemPath).toString()
+				useCacheControl = grailsApplication.config.dynamicThemes.production.resourceController.useCacheControl
 			} else {
-				fileSystemPath = System.properties['base.dir'] + "themes"
+				urlThemes = grailsApplication.config.dynamicThemes.development.preprocessor.urlThemes
+				fileSystemPath = grailsApplication.config.dynamicThemes.development.preprocessor.fileSystemPath
+				useCacheControl = grailsApplication.config.dynamicThemes.development.resourceController.useCacheControl
 			}
-			
-			println "grailsApplication.parentContext: " + grailsApplication.parentContext.getResource("themes")
-			println "System.properties: " + System.properties['base.dir'] + "\themes"
-			
-			def useCacheControl = grailsApplication.config.dynamicThemes.resourceController.useCacheControl
-			
 			
 			def urlFolderImages = grailsLinkGenerator.resource(dir: "${urlThemes}/${themeName}/images", absolute:true)
 			def FileSystemPathHtml = "${fileSystemPath}${slash}${themeName}${slash}${themeName}.html"

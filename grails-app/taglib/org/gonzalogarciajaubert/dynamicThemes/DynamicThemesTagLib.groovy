@@ -18,8 +18,8 @@ class DynamicThemesTagLib {
 	 */
 	def injectCss = { attrs, body ->
 		def vars = ""
-		attrs.variables?.each {key, value -> 
-			vars += "variables.${key}=${value}"
+		attrs.model?.each {key, value -> 
+			vars += "model.${key}=${value}"
 		}
 		
 		out <<  """<link rel="stylesheet" href="${resource(dir:'/resource/css',absolute: false, file:"${attrs?.themeName}?ImagesPath=${attrs?.ImagesPath}&${vars}")}" />"""

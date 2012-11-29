@@ -29,7 +29,14 @@ grails.views.gsp.encoding="UTF-8"
 
 // DynamicThemes
 dynamicThemes {
-	resourceController.useCacheControl = true			// Override to control the css cached
-	preprocessor.urlThemes = 'themes'					// Base url for themes. Default is web-app/themes
-	preprocessor.fileSystemPath = 'web-app/themes'		// Base path for themes. Default is web-app/themes
+    development {
+		resourceController.useCacheControl = true			// Override to control the css cached
+		preprocessor.urlThemes = 'themes'					// Relative url for themes. 
+		preprocessor.fileSystemPath = 'web-app/themes'		// Relative file system path for themes. Default is web-app/themes
+    }
+    production {
+		resourceController.useCacheControl = true			// Override to control the css cached
+		preprocessor.urlThemes = 'themes'					// Relative url for themes. 
+		preprocessor.fileSystemPath =  "themes"				// Relative file system path for themes (servletContext)
+    }
 }

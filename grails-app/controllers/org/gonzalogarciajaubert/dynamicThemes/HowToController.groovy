@@ -22,7 +22,7 @@ class HowToController {
 	
 	/**
 	 * The CSS + Partial GSP.
-	 * Sections and Variables are optional!
+	 * Sections and model are optional!
 	 * 
 	 * @return
 	 */
@@ -32,15 +32,15 @@ class HowToController {
 		def elements = "[1,2,3,'hello']"
 		def sections = ["#beginLoop#": """<g:each var="element" in="${elements}">""", """#endLoop#""": """</g:each>"""]
 		def elementsList = ['Post 1', 'Post 2', 'Post 3']
-		def variables = [ImagesPath: preprocessorService.getConfigParams(themeName ).urlFolderImages, elements:elementsList]
-		// Sections and Variables are optional!
-		def result = preprocessorService.preprocess(themeName , sections, variables)
+		def model = [ImagesPath: preprocessorService.getConfigParams(themeName ).urlFolderImages, elements:elementsList]
+		// Sections and model are optional!
+		def result = preprocessorService.preprocess(themeName , sections, model)
 		[themeName: themeName, result: result]
 	}
 	
 	/**
 	 * The CSS + GSP.
-	 * Sections and Variables are optional!
+	 * Sections and model are optional!
 	 * 
 	 * It's the same!!!
 	 *
@@ -52,10 +52,10 @@ class HowToController {
 		def elements = "[1,2,3,'hello']"
 		def sections = ["#beginLoop#": """<g:each var="element" in="${elements}">""", """#endLoop#""": """</g:each>"""]
 		def elementsList = ['Post 1', 'Post 2', 'Post 3']
-		def variables = [ImagesPath: preprocessorService.getConfigParams(themeName ).urlFolderImages, elements:elementsList]
+		def model = [ImagesPath: preprocessorService.getConfigParams(themeName ).urlFolderImages, elements:elementsList]
 
 		// Sections and Variables are optional!
-		def result = preprocessorService.preprocess(themeName , sections, variables)
+		def result = preprocessorService.preprocess(themeName , sections, model)
 		[themeName: themeName, result: result]
 	}
 	

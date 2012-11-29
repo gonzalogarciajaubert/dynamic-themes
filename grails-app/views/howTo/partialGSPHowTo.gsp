@@ -5,7 +5,7 @@
 		<title>partialGSPHowTo</title>
 		<g:injectCss themeName="${themeName}"/>
 		<g:injectCss themeName="${themeName}" ImagesPath="true" />
-		<g:injectCss themeName="${themeName}" ImagesPath="false" variables="[var1: 'hello']"/>		
+		<g:injectCss themeName="${themeName}" ImagesPath="false" model="[var1: 'hello']"/>		
 	</head>
 	<body>
 		An css and gsp DynamicThemes example. View source code for the css DynamicThemes.

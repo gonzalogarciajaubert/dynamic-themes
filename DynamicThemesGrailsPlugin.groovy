@@ -12,20 +12,18 @@ class DynamicThemesGrailsPlugin {
 
     def title = "DynamicThemes Plugin" // Headline display name of the plugin
     def author = "Garcia Jaubert, Gonzalo"
-    def authorEmail = "1973marcos@gmail.com"
-	// TODO: GGJ
+    def authorEmail = "gjaubert@gmail.com"
     def description = '''\
 The DynamicThemes plugin allows your Grails application to load \
-externals gsp and css dinamically. It allow you to use a \
-theme folder in any folder and render it. \
-You can process variables and secctions in your gsp. \
-See DynamicThemesTest (https://github.com/gonzalogarciajaubert/DynamicThemesTest)\
+and render your pages with your own theme (folders with GSP templates \
+and css) dinamically outside the scope of a web request. \
+You can process models and sections (your own tags) in your templates.  \
+See DynamicThemesTest (https://github.com/gonzalogarciajaubert/DynamicThemesExample/wiki) \
 application for examples.
 '''
 
     // URL to the plugin's documentation
-	// TODO: GGJ => Apuntar  GITHUB
-    def documentation = "https://github.com/gonzalogarciajaubert/DynamicThemes/wiki"
+    def documentation = "http://dynamicthemes.dancingrails.com/"
 
     // Extra (optional) plugin metadata
 
@@ -39,12 +37,10 @@ application for examples.
 //    def developers = [ [ name: "Joe Bloggs", email: "joe@bloggs.net" ]]
 
     // Location of the plugin's issue tracker.
-	// TODO: GGJ => Apuntar  GITHUB
-    def issueManagement = [ system: "github", url: "https://github.com/gonzalogarciajaubert/DynamicThemes/issues" ]
+    def issueManagement = [ system: "github", url: "https://github.com/gonzalogarciajaubert/DynamicThemesPlugin/issues" ]
 
     // Online location of the plugin's browseable source code.
-	// TODO: GGJ => Apuntar  GITHUB
-    def scm = [ url: "https://github.com/gonzalogarciajaubert/DynamicThemes" ]
+    def scm = [ url: "https://github.com/gonzalogarciajaubert/DynamicThemesPlugin" ]
 
     def doWithWebDescriptor = { xml ->
         // TODO Implement additions to web.xml (optional), this event occurs before

@@ -5,7 +5,7 @@ Version: 0.1.0
 
 == Introduction ==
 
-The **DynamicThemes plugin** allows your Grails application to load and render your pages with your own theme (*folders* with GSP templates and css) dinamically outside the scope of a web request. If you've ever used Tumblr or Wordpress then you know what a *theme* is and how it works.
+The '''DynamicThemes plugin''' allows your Grails application to load and render your pages with your own theme ('''folders''' with GSP templates and css) dinamically outside the scope of a web request. If you've ever used Tumblr or Wordpress then you know what a '''theme''' is and how it works.
 
 You can process models and sections (your own tags) in your themes. 
 
@@ -18,7 +18,7 @@ This plugin provides the following feature:
 
 === Further Reading ===
 
-* See [[https://github.com/gonzalogarciajaubert/DynamicThemesExample | DynamicThemesExample]] application for examples.
+* See [[https://github.com/gonzalogarciajaubert/DynamicThemesExample | DynamicThemesExample ]]  application for examples.
 * See [[http://dynamicthemes.dancingrails.com| DynamicThemes official page]] 
 * See [[http://www.dancingrails.com| Blog]] 
 * And follow @ggjaubert 
@@ -35,26 +35,24 @@ Installing the plugin can be done in one of two ways:
 
 ==== Installing the plugin using then Grails dependency DSL (Recommended) ====
 
-*Note: Not avaliable yet. Contribute to http://grails.org/plugins/pending * 
+'''Note: Not avaliable yet. Contribute to http://grails.org/plugins/pending''' 
 
 In BuildConfig.groovy, add the dependency to your 'plugins' section:
 
 <pre style="border: 1px solid #ccc; border-radius: 3px; background-color: #F8F8F8;">
 plugins {
-        …
-        compile ':dynamicthemes:0.1'
-        …
+       	...
+        	compile ':dynamicthemes:0.1'
+        	...
     }
 </pre>    
     
-
-{{{
 Note that the version (0.1 in the example above) should be change to refelect the version you would like to us
-}}}
+
 
 ==== Installing the plugin 'on-the-fly' ====
 
-*Note: Not avaliable yet. Contribute to http://grails.org/plugins/pending * 
+'''Note: Not avaliable yet. Contribute to http://grails.org/plugins/pending'''
 
 Simply run the command grails install-plugin dynamicthemes. Note that this will install the latest version into the global scope, rather than the compile scope which is slightly cleaner, above.
 
@@ -80,7 +78,7 @@ dynamicThemes {
 
 === Scripts ===
 
-After installation you can call the DyncamicThemes script *grails DynamicThemes*, which will copy several files into your project. 
+After installation you can call the DyncamicThemes script '''grails DynamicThemes''', which will copy several files into your project. 
 
 <pre style="border: 1px solid #ccc; border-radius: 3px; background-color: #F8F8F8;">
 
@@ -155,28 +153,28 @@ And with sections:
 
 == Using the plugin ==
 
-Using the **DynamicThemes plugin** in your application requires a few simple steps:
+Using the '''DynamicThemes plugin''' in your application requires a few simple steps:
 
-*Optional*: If you want to inject sections (see _sections_):
+'''Optional''': If you want to inject sections (see _sections_):
 <pre style="border: 1px solid #ccc; border-radius: 3px; background-color: #F8F8F8;">
 	// Example of sections replace
 	def elements = "['Post 1', 'Post 2', 'Post 3']"
 	def sections = ["#beginLoop#": """<g:each var="element" in="${elements}">""", """#endLoop#""": """</g:each>"""]
 </pre>
 
-*Optional*: If you want to inject models (see _models_):
+'''Optional''': If you want to inject models (see _models_):
 <pre style="border: 1px solid #ccc; border-radius: 3px; background-color: #F8F8F8;">
 	def themeName = "default"
 	def elementsList = ['Post 1', 'Post 2', 'Post 3']
 	def model = [ImagesPath: preprocessorService.getConfigParams(themeName).urlFolderImages, elements:elementsList]
 </pre>
 
-*Optional*: Example for a snapshot (see _more_)
+'''Optional''': Example for a snapshot (see _more_)
 <pre style="border: 1px solid #ccc; border-radius: 3px; background-color: #F8F8F8;">
 	def snap = preprocessorService.getConfigParams(themeName).urlSnapshot
 </pre>
 
-*Process your theme and return to view*:
+Process your theme and return to view:
 <pre style="border: 1px solid #ccc; border-radius: 3px; background-color: #F8F8F8;">
 	def theme = preprocessorService.preprocess(themeName , sections, model)
 	[themes: themes, theme: theme, css: cssName, cssSelect: params?.cssSelect, themeSelect: params?.themeSelect, snapshot: snap]

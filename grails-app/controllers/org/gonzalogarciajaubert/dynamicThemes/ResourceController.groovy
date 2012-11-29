@@ -53,8 +53,8 @@ class ResourceController {
 			
 		// Inject CSS
 		try {
-			Map variables = (params?.variables ? params?.variables : [:])
-			def cssText = preprocessorService.resourceProcessor(cssPath.getText(), themeName, variables, params?.ImagesPath)	
+			Map model = (params?.model ? params?.model : [:])
+			def cssText = preprocessorService.resourceProcessor(cssPath.getText(), themeName, model, params?.ImagesPath)	
 			render(text:cssText, contentType:"text/css")
 		} catch (Exception ex) {
 			log.error "Failed to process template", ex

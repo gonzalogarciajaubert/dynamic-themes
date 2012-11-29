@@ -1,10 +1,10 @@
 <plugin name='dynamic-themes' version='0.1' grailsVersion='2.1 &gt; *'>
   <author>Garcia Jaubert, Gonzalo</author>
-  <authorEmail>1973marcos@gmail.com</authorEmail>
+  <authorEmail>gjaubert@gmail.com</authorEmail>
   <title>DynamicThemes Plugin</title>
-  <description>The DynamicThemes plugin allows your Grails application to load externals gsp and css dinamically. It allow you to use a theme folder in any folder and render it. You can process variables and secctions in your gsp. See DynamicThemesTest (https://github.com/gonzalogarciajaubert/DynamicThemesTest)application for examples.
+  <description>The DynamicThemes plugin allows your Grails application to load and render your pages with your own theme (folders with GSP templates and css) dinamically outside the scope of a web request. You can process models and sections (your own tags) in your templates.  See DynamicThemesTest (https://github.com/gonzalogarciajaubert/DynamicThemesExample/wiki) application for examples.
 </description>
-  <documentation>https://github.com/gonzalogarciajaubert/DynamicThemes/wiki</documentation>
+  <documentation>http://dynamicthemes.dancingrails.com/</documentation>
   <type>DynamicThemesGrailsPlugin</type>
   <resources>
     <resource>org.gonzalogarciajaubert.dynamicThemes.HowToController</resource>
