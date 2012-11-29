@@ -100,7 +100,7 @@ You can test the plugin with the next views:
 * GSPHowto: Example of full gsp injection
 * cssHowTo: Example of css injection
 
-If you want full examples, visit: [[https://github.com/gonzalogarciajaubert/DynamicThemesExample | DynamicThemesExample]] 
+If you want full examples, visit: [[https://github.com/gonzalogarciajaubert/DynamicThemesExample| DynamicThemesExample]] 
 
 == Themes ==
 
