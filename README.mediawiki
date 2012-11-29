@@ -2,6 +2,8 @@ __NOTOC__
 
 = DynamicThemes Plugin =
 
+# Prueba
+
 Author: Gonzalo Garcia Jaubert
 Version: 0.1.0
 
