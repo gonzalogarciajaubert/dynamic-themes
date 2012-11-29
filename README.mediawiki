@@ -64,7 +64,6 @@ Simply run the command grails install-plugin dynamicthemes. Note that this will 
 Edit <grails-appl-base-dir>/conf/Config.groovy to add:
 
 <pre style="border: 1px solid #ccc; border-radius: 3px; background-color: #F8F8F8;">
-
 dynamicThemes {
     development {
 		resourceController.useCacheControl = true			// Override to control the css cached
