@@ -1,3 +1,5 @@
+__NOTOC__
+
 = DynamicThemes Plugin =
 
 Author: Gonzalo Garcia Jaubert
@@ -113,19 +115,19 @@ The only expected file is <themeName>.html. You can see two themes examples in t
 
 The default.html file contains a link to "webapps\themes\images\grails_logo.png" with the next code: 
 
-<pre>
+<pre style="border: 1px solid #ccc; border-radius: 3px; background-color: #F8F8F8;">
 	<img alt="imagen1" src='${ImagesPath}/grails_logo.png'">
 </pre>
 
 This html (a gsp) use the default.css stylesheet:
 
-<pre>
+<pre style="border: 1px solid #ccc; border-radius: 3px; background-color: #F8F8F8;">
 	<div class="fondodiv">
 </pre>
 
 And show two ways to see a list of elements. First with grails code:
 
-<pre>
+<pre style="border: 1px solid #ccc; border-radius: 3px; background-color: #F8F8F8;">
 		<g:each var="element" in="${elements}">
 			
 				<h2>${element}</h2>
@@ -141,7 +143,7 @@ And show two ways to see a list of elements. First with grails code:
 
 And with sections:
 
-<pre>
+<pre style="border: 1px solid #ccc; border-radius: 3px; background-color: #F8F8F8;">
 		<ul>
 		  #beginLoop#
 		    <li>Element: <b>${element}</b>
@@ -184,7 +186,7 @@ Process your theme and return to view:
 
 To inject a dynamic css in your view use the injectCss tag:
 
-<pre>
+<pre style="border: 1px solid #ccc; border-radius: 3px; background-color: #F8F8F8;">
 	<head>
 		<meta name="layout" content="main">
 		<title>cssHowTo</title>
@@ -195,7 +197,7 @@ To inject a dynamic css in your view use the injectCss tag:
 
 To inject a dynamic html/gsp in your view use the injectGSP tag: 
 
-<pre>
+<pre style="border: 1px solid #ccc; border-radius: 3px; background-color: #F8F8F8;">
 	<body>
 		An css and gsp DynamicThemes example. View source code for the css DynamicThemes.
 		
@@ -212,7 +214,7 @@ When using the plugin you can use the next parameters:
 
 Sections are code replaced before processing. Example:
 
-<pre>
+<pre style="border: 1px solid #ccc; border-radius: 3px; background-color: #F8F8F8;">
 		<ul>
 		  #beginLoop#
 		    <li>Element: <b>${element}</b>
@@ -258,7 +260,7 @@ In your controller use:
 
 You can inject other files. For example the snapshot of the theme with:
 
-<pre>
+<pre style="border: 1px solid #ccc; border-radius: 3px; background-color: #F8F8F8;">
 		<div class="hero-unit">
 			<h2>Snapshot for the theme</h2>
 			<img src="${snapshot}" style="width:200px"/>
@@ -267,7 +269,7 @@ You can inject other files. For example the snapshot of the theme with:
 
 In your controller:
 
-<pre>
+<pre style="border: 1px solid #ccc; border-radius: 3px; background-color: #F8F8F8;">
 	def snap = preprocessorService.getConfigParams(themeName).urlSnapshot
 </pre>
 
