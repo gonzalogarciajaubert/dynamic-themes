@@ -20,7 +20,7 @@ This plugin provides the following feature:
 
 === Further Reading ===
 
-* See [[https://github.com/gonzalogarciajaubert/DynamicThemesExample | DynamicThemesExample ]]  application for examples.
+* See [[https://github.com/gonzalogarciajaubert/DynamicThemesExample| DynamicThemesExample ]]  application for examples.
 * See [[http://dynamicthemes.dancingrails.com| DynamicThemes official page]] 
 * See [[http://www.dancingrails.com| Blog]] 
 * And follow @ggjaubert 
