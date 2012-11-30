@@ -173,7 +173,7 @@ Using the '''DynamicThemes plugin''' in your application requires a few simple s
 	def themeName = "default"
 	def elementsList = ['Post 1', 'Post 2', 'Post 3']
 	def model = [ImagesPath: preprocessorService.getConfigParams(themeName).urlFolderImages, elements:elementsList]
-``
+```
 
 **Optional**: Example for a snapshot (see _more_)
 
