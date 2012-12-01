@@ -127,19 +127,19 @@ The only expected file is themeName.html. You can see two themes examples in the
 
 The default.html file contains a link to **webapps\themes\images\grails_logo.png** with the next code: 
 
-`groovy
+`html
 	<img alt="imagen1" src='${ImagesPath}/grails_logo.png'">
 `
 
 This html (a gsp) use the default.css stylesheet:
 
-`groovy
+`html
 	<div class="fondodiv">
 `
 
 And show two ways to see a list of elements. First with grails code:
 
-```groovy
+```html
 		<g:each var="element" in="${elements}">			
 				<h2>${element}</h2>
 				<hr>
@@ -153,7 +153,7 @@ And show two ways to see a list of elements. First with grails code:
 
 And with sections:
 
-```groovy
+```html
 		<ul>
 		  #beginLoop#
 		    <li>Element: <b>${element}</b>
@@ -204,7 +204,7 @@ Process your theme and return to view:
 
 To inject a dynamic css in your view use the injectCss tag:
 
-```groovy
+```html
 	<head>
 		<meta name="layout" content="main">
 		<title>cssHowTo</title>
@@ -215,7 +215,7 @@ To inject a dynamic css in your view use the injectCss tag:
 
 To inject a dynamic html/gsp in your view use the injectGSP tag: 
 
-```groovy
+```html
 	<body>
 		An css and gsp DynamicThemes example. View source code for the css DynamicThemes.
 		<g:injectGSP instance="${result}"/>
@@ -231,7 +231,7 @@ When using the plugin you can use the next parameters:
 
 Sections are code replaced before processing. Example:
 
-```groovy
+```html
 		<ul>
 		  #beginLoop#
 		    <li>Element: <b>${element}</b>
@@ -252,7 +252,7 @@ in your controller replace the secctions with your own code with:
 
 You can inject models in your theme. Example:
 
-```groovy
+```html
     <g:each var="element" in="${elements}">			
 				<h2>${element}</h2>
 				<hr>
@@ -275,7 +275,7 @@ In your controller use:
 
 You can inject other files. For example the snapshot of the theme with:
 
-```groovy
+```html
 		<div class="hero-unit">
 			<h2>Snapshot for the theme</h2>
 			<img src="${snapshot}" style="width:200px"/>
