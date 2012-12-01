@@ -6,7 +6,7 @@ Version: 0.1.0
 
 ## Introduction
 
-The **DynamicThemes plugin** allows your Grails application to load and render your pages with your own theme (**folders** with GSP templates and css) dinamically outside the scope of a web request. If you've ever used Tumblr or Wordpress then you know what a **theme** is and how it works.
+The **DynamicThemes plugin** allows your Grails application to load and render pages with your own theme ( **folders** with GSP templates and css) dinamically outside the scope of a web request. If you've ever used Tumblr or Wordpress then you know what a **theme** is and how it works.
 
 You can process models and sections (your own tags) in your themes. 
 
@@ -22,7 +22,7 @@ This plugin provides the following feature:
 
 * See [DynamicThemesExample](https://github.com/gonzalogarciajaubert/DynamicThemesExample)  application for examples.
 * See [DynamicThemes official page](http://dynamicthemes.dancingrails.com) 
-* See [blog](http://www.dancingrails.com)
+* See [blog](http://dancingrails.com)
 * And follow @ggjaubert 
 
 ### Licensing
@@ -39,9 +39,9 @@ Installing the plugin can be done in one of two ways:
 
 #### Installing the plugin using then Grails dependency DSL (Recommended)
 
-`
-Note: Not avaliable yet. Contribute to http://grails.org/plugins/pending
-`
+
+**Note: Not avaliable yet. Contribute to http://grails.org/plugins/pending**
+
 
 In BuildConfig.groovy, add the dependency to your 'plugins' section:
 
@@ -58,33 +58,39 @@ Note that the version (0.1 in the example above) should be change to refelect th
 
 #### Installing the plugin 'on-the-fly'
 
-`
-Note: Not avaliable yet. Contribute to http://grails.org/plugins/pending
-`
 
-Simply run the command grails install-plugin dynamicthemes. Note that this will install the latest version into the global scope, rather than the compile scope which is slightly cleaner, above.
+**Note: Not avaliable yet. Contribute to http://grails.org/plugins/pending**
+
+
+Simply run the command `grails install-plugin dynamicthemes`. Note that this will install the latest version into the global scope, rather than the compile scope which is slightly cleaner, above.
 
 ### Configure the plugin
 
-Edit grails-appl-base-dir/conf/Config.groovy to add:
+Edit `grails-appl-base-dir/conf/Config.groovy` to add:
 
 ```
 dynamicThemes {
     development {
-		resourceController.useCacheControl = true			// Override to control the css cached
-		preprocessor.urlThemes = 'themes'					// Relative url for themes. 
-		preprocessor.fileSystemPath = 'web-app/themes'		// Relative file system path for themes. Default is web-app/themes
+		resourceController.useCacheControl = true
+		preprocessor.urlThemes = 'themes' 
+		preprocessor.fileSystemPath = 'web-app/themes'
     }
     production {
-		resourceController.useCacheControl = true			// Override to control the css cached
-		preprocessor.urlThemes = 'themes'					// Relative url for themes. 
-		preprocessor.fileSystemPath =  "themes"				// Relative file system path for themes (servletContext)
+		resourceController.useCacheControl = true
+		preprocessor.urlThemes = 'themes' 
+		preprocessor.fileSystemPath =  'themes'
     }
 }
 ```
 
+You can define values for you development and production enviroment.
 
-# Scripts
+# useCacheControl: Override to control the css cached.
+# urlThemes: Relative url for themes.
+# fileSystemPath: Relative file system path for themes. Default is web-app/themes
+
+
+## Scripts
 
 After installation you can call the DyncamicThemes script **grails DynamicThemes**, which will copy several files into your project. 
 
@@ -94,7 +100,7 @@ After installation you can call the DyncamicThemes script **grails DynamicThemes
 
 This script will create a themes folder under web-app and copy to themes into it (default and default2).
 
-### HowTo's
+## HowTo's
 
 You can test the plugin with the next views:
 
@@ -119,7 +125,7 @@ themeName
 
 The only expected file is themeName.html. You can see two themes examples in the webapp dir: default and default2.
 
-The default.html file contains a link to "webapps\themes\images\grails_logo.png" with the next code: 
+The default.html file contains a link to **webapps\themes\images\grails_logo.png** with the next code: 
 
 `
 	<img alt="imagen1" src='${ImagesPath}/grails_logo.png'">
@@ -157,7 +163,14 @@ And with sections:
 
 ## Using the plugin
 
-Using the '''DynamicThemes plugin''' in your application requires a few simple steps:
+Using the **DynamicThemes plugin** in your application requires a few simple steps:
+
+Process your theme and return to view:
+
+```
+	def theme = preprocessorService.preprocess(themeName , sections, model)
+	[heme: theme]
+```
 
 **Optional**: If you want to inject sections (see _sections_):
 
@@ -181,14 +194,13 @@ Using the '''DynamicThemes plugin''' in your application requires a few simple s
 	def snap = preprocessorService.getConfigParams(themeName).urlSnapshot
 ```
 
-Process your theme and return to view:
+**Optional**: Process your theme and return to view with your optional params:
 
 ```
 	def theme = preprocessorService.preprocess(themeName , sections, model)
-	[themes: themes, theme: theme, css: cssName, cssSelect: params?.cssSelect, themeSelect: params?.themeSelect, snapshot: snap]
 ```
 
-### Using the Tag Library
+## Using the Tag Library
 
 To inject a dynamic css in your view use the injectCss tag:
 
@@ -211,7 +223,7 @@ To inject a dynamic html/gsp in your view use the injectGSP tag:
 ```
 
 
-### Parameters
+## Parameters
 
 When using the plugin you can use the next parameters:
 
@@ -259,7 +271,7 @@ In your controller use:
 	def model = [ImagesPath: preprocessorService.getConfigParams(themeName).urlFolderImages, elements:elementsList]
 ```
 
-#### more
+#### others
 
 You can inject other files. For example the snapshot of the theme with:
 
