@@ -45,7 +45,7 @@ Installing the plugin can be done in one of two ways:
 
 In BuildConfig.groovy, add the dependency to your 'plugins' section:
 
-```
+```groovy
 plugins {
        	...
         	compile ':dynamicthemes:0.1'
@@ -68,7 +68,7 @@ Simply run the command `grails install-plugin dynamicthemes`. Note that this wil
 
 Edit `grails-appl-base-dir/conf/Config.groovy` to add:
 
-```
+```groovy
 dynamicThemes {
     development {
 		resourceController.useCacheControl = true
@@ -127,19 +127,19 @@ The only expected file is themeName.html. You can see two themes examples in the
 
 The default.html file contains a link to **webapps\themes\images\grails_logo.png** with the next code: 
 
-`
+`groovy
 	<img alt="imagen1" src='${ImagesPath}/grails_logo.png'">
 `
 
 This html (a gsp) use the default.css stylesheet:
 
-`
+`groovy
 	<div class="fondodiv">
 `
 
 And show two ways to see a list of elements. First with grails code:
 
-```
+```groovy
 		<g:each var="element" in="${elements}">			
 				<h2>${element}</h2>
 				<hr>
@@ -153,7 +153,7 @@ And show two ways to see a list of elements. First with grails code:
 
 And with sections:
 
-```
+```groovy
 		<ul>
 		  #beginLoop#
 		    <li>Element: <b>${element}</b>
@@ -167,14 +167,14 @@ Using the **DynamicThemes plugin** in your application requires a few simple ste
 
 Process your theme and return to view:
 
-```
+```groovy
 	def theme = preprocessorService.preprocess(themeName)
 	[heme: theme]
 ```
 
 **Optional**: If you want to inject sections (see _sections_):
 
-```
+```groovy
 	// Example of sections replace
 	def elements = "['Post 1', 'Post 2', 'Post 3']"
 	def sections = ["#beginLoop#": """<g:each var="element" in="${elements}">""", """#endLoop#""": """</g:each>"""]
@@ -182,7 +182,7 @@ Process your theme and return to view:
 
 **Optional**: If you want to inject models (see _models_):
 
-```
+```groovy
 	def themeName = "default"
 	def elementsList = ['Post 1', 'Post 2', 'Post 3']
 	def model = [ImagesPath: preprocessorService.getConfigParams(themeName).urlFolderImages, elements:elementsList]
@@ -190,13 +190,13 @@ Process your theme and return to view:
 
 **Optional**: Example for a snapshot (see _more_)
 
-```
+```groovy
 	def snap = preprocessorService.getConfigParams(themeName).urlSnapshot
 ```
 
 **Optional**: Process your theme and return to view with your optional params:
 
-```
+```groovy
 	def theme = preprocessorService.preprocess(themeName , sections, model)
 ```
 
@@ -204,7 +204,7 @@ Process your theme and return to view:
 
 To inject a dynamic css in your view use the injectCss tag:
 
-```
+```groovy
 	<head>
 		<meta name="layout" content="main">
 		<title>cssHowTo</title>
@@ -215,7 +215,7 @@ To inject a dynamic css in your view use the injectCss tag:
 
 To inject a dynamic html/gsp in your view use the injectGSP tag: 
 
-```
+```groovy
 	<body>
 		An css and gsp DynamicThemes example. View source code for the css DynamicThemes.
 		<g:injectGSP instance="${result}"/>
@@ -231,7 +231,7 @@ When using the plugin you can use the next parameters:
 
 Sections are code replaced before processing. Example:
 
-```
+```groovy
 		<ul>
 		  #beginLoop#
 		    <li>Element: <b>${element}</b>
@@ -241,7 +241,7 @@ Sections are code replaced before processing. Example:
 
 in your controller replace the secctions with your own code with:
 
-```
+```groovy
 	// Example of sections replace
 	def elements = "['Post 1', 'Post 2', 'Post 3']"
 	def sections = ["#beginLoop#": """<g:each var="element" in="${elements}">""", """#endLoop#""": """</g:each>"""]
@@ -252,7 +252,7 @@ in your controller replace the secctions with your own code with:
 
 You can inject models in your theme. Example:
 
-```
+```groovy
     <g:each var="element" in="${elements}">			
 				<h2>${element}</h2>
 				<hr>
@@ -265,7 +265,7 @@ You can inject models in your theme. Example:
 ```
 
 In your controller use:
-```
+```groovy
 	def themeName = "default"
 	def elementsList = ['Post 1', 'Post 2', 'Post 3']
 	def model = [ImagesPath: preprocessorService.getConfigParams(themeName).urlFolderImages, elements:elementsList]
@@ -275,7 +275,7 @@ In your controller use:
 
 You can inject other files. For example the snapshot of the theme with:
 
-```
+```groovy
 		<div class="hero-unit">
 			<h2>Snapshot for the theme</h2>
 			<img src="${snapshot}" style="width:200px"/>
@@ -284,7 +284,7 @@ You can inject other files. For example the snapshot of the theme with:
 
 In your controller:
 
-```
+```groovy
 	def snap = preprocessorService.getConfigParams(themeName).urlSnapshot
 ```
 
