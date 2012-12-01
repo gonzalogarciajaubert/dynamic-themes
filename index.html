@@ -1,74 +1,318 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Dynamicthemesplugin : Grails plugins" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Dynamicthemesplugin by gonzalogarciajaubert</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Dynamicthemesplugin</title>
   </head>
-
   <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/gonzalogarciajaubert/DynamicThemesPlugin">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/gonzalogarciajaubert/DynamicThemesPlugin/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/gonzalogarciajaubert/DynamicThemesPlugin/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/gonzalogarciajaubert/DynamicThemesPlugin">View on GitHub</a>
+    <div class="wrapper">
 
-          <h1 id="project_title">Dynamicthemesplugin</h1>
-          <h2 id="project_tagline">Grails plugins</h2>
+      <section>
+        <div id="title">
+          <h1>Dynamicthemesplugin</h1>
+          <p>Grails plugins</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/gonzalogarciajaubert">gonzalogarciajaubert</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/gonzalogarciajaubert/DynamicThemesPlugin/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/gonzalogarciajaubert/DynamicThemesPlugin/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+        <h1>DynamicThemes Plugin</h1>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>Welcome to GitHub Pages.</h3>
+<p>Author: Gonzalo Garcia Jaubert</p>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>Version: 0.1.0</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+<h2>Introduction</h2>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p>The <strong>DynamicThemes plugin</strong> allows your Grails application to load and render pages with your own theme ( <strong>folders</strong> with GSP templates and css) dinamically outside the scope of a web request. If you've ever used Tumblr or Wordpress then you know what a <strong>theme</strong> is and how it works.</p>
 
-<h3>Designer Templates</h3>
+<p>You can process models and sections (your own tags) in your themes. </p>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p>This plugin provides the following feature:</p>
 
-<h3>Rather Drive Stick?</h3>
+<ul>
+<li>Easy way to add themes to your project</li>
+<li>Build external gsp and css themes</li>
+<li>Change the style of your pages with external css</li>
+<li>Load external views</li>
+<li>Load external templates</li>
+</ul><h3>Further Reading</h3>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<ul>
+<li>See <a href="https://github.com/gonzalogarciajaubert/DynamicThemesExample">DynamicThemesExample</a>  application for examples.</li>
+<li>See <a href="http://dynamicthemes.dancingrails.com">DynamicThemes official page</a> </li>
+<li>See <a href="http://dancingrails.com">blog</a>
+</li>
+<li>And follow @ggjaubert </li>
+</ul><h3>Licensing</h3>
 
-<h3>Authors and Contributors</h3>
+<p><code>
+This plugin is released under the Apache License. 
+</code></p>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<h2>Quick Start</h2>
 
-<h3>Support or Contact</h3>
+<h3>Install the plugin</h3>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<p>Installing the plugin can be done in one of two ways:</p>
+
+<h4>Installing the plugin using then Grails dependency DSL (Recommended)</h4>
+
+<p><strong>Note: Not avaliable yet. Contribute to <a href="http://grails.org/plugins/pending">http://grails.org/plugins/pending</a></strong></p>
+
+<p>In BuildConfig.groovy, add the dependency to your 'plugins' section:</p>
+
+<div class="highlight"><pre><span class="n">plugins</span> <span class="o">{</span>
+        <span class="o">...</span>
+            <span class="n">compile</span> <span class="s1">':dynamicthemes:0.1'</span>
+        <span class="o">...</span>
+    <span class="o">}</span>
+</pre></div>
+
+<p>Note that the version (0.1 in the example above) should be change to refelect the version you would like to us</p>
+
+<h4>Installing the plugin 'on-the-fly'</h4>
+
+<p><strong>Note: Not avaliable yet. Contribute to <a href="http://grails.org/plugins/pending">http://grails.org/plugins/pending</a></strong></p>
+
+<p>Simply run the command <code>grails install-plugin dynamicthemes</code>. Note that this will install the latest version into the global scope, rather than the compile scope which is slightly cleaner, above.</p>
+
+<h3>Configure the plugin</h3>
+
+<p>Edit <code>grails-appl-base-dir/conf/Config.groovy</code> to add:</p>
+
+<div class="highlight"><pre><span class="n">dynamicThemes</span> <span class="o">{</span>
+    <span class="n">development</span> <span class="o">{</span>
+        <span class="n">resourceController</span><span class="o">.</span><span class="na">useCacheControl</span> <span class="o">=</span> <span class="kc">true</span>
+        <span class="n">preprocessor</span><span class="o">.</span><span class="na">urlThemes</span> <span class="o">=</span> <span class="s1">'themes'</span> 
+        <span class="n">preprocessor</span><span class="o">.</span><span class="na">fileSystemPath</span> <span class="o">=</span> <span class="s1">'web-app/themes'</span>
+    <span class="o">}</span>
+    <span class="n">production</span> <span class="o">{</span>
+        <span class="n">resourceController</span><span class="o">.</span><span class="na">useCacheControl</span> <span class="o">=</span> <span class="kc">true</span>
+        <span class="n">preprocessor</span><span class="o">.</span><span class="na">urlThemes</span> <span class="o">=</span> <span class="s1">'themes'</span> 
+        <span class="n">preprocessor</span><span class="o">.</span><span class="na">fileSystemPath</span> <span class="o">=</span>  <span class="s1">'themes'</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+
+<p>You can define values for you development and production enviroment.</p>
+
+<ul>
+<li>useCacheControl: Override to control the css cached.</li>
+<li>urlThemes: Relative url for themes.</li>
+<li>fileSystemPath: Relative file system path for themes. Default is web-app/themes</li>
+</ul><h2>Scripts</h2>
+
+<p>After installation you can call the DyncamicThemes script <strong>grails DynamicThemes</strong>, which will copy several files into your project. </p>
+
+<p><code>
+  grails DynamicThemes
+</code></p>
+
+<p>This script will create a themes folder under web-app and copy to themes into it (default and default2).</p>
+
+<h2>HowTo's</h2>
+
+<p>You can test the plugin with the next views:</p>
+
+<ul>
+<li>partialGSPHowTo: Example of partial gsp injection</li>
+<li>GSPHowto: Example of full gsp injection</li>
+<li>cssHowTo: Example of css injection</li>
+</ul><p>If you want full examples, visit <a href="https://github.com/gonzalogarciajaubert/DynamicThemesExample">DynamicThemesExample</a>  </p>
+
+<h2>Themes</h2>
+
+<p>Themes are folders with the following example structure:</p>
+
+<div class="highlight"><pre><span class="n">themeName</span>
+<span class="o">-</span> <span class="err">\</span><span class="n">icons</span><span class="err">\</span><span class="o">*.</span><span class="na">png</span>
+<span class="o">-</span> <span class="err">\</span><span class="n">images</span><span class="err">\</span><span class="o">*.</span><span class="na">png</span>
+<span class="o">-</span> <span class="n">themeName</span><span class="o">.</span><span class="na">css</span>
+<span class="o">-</span> <span class="n">themeName</span><span class="o">.</span><span class="na">html</span>
+<span class="o">-</span> <span class="n">themeName</span><span class="o">.</span><span class="na">snapshot</span><span class="o">.</span><span class="na">png</span>
+</pre></div>
+
+<p>The only expected file is themeName.html. You can see two themes examples in the webapp dir: default and default2.</p>
+
+<p>The default.html file contains a link to <strong>webapps\themes\images\grails_logo.png</strong> with the next code: </p>
+
+<p><code>html
+    &lt;img alt="imagen1" src='${ImagesPath}/grails_logo.png'"&gt;
+</code></p>
+
+<p>This html (a gsp) use the default.css stylesheet:</p>
+
+<p><code>html
+    &lt;div class="fondodiv"&gt;
+</code></p>
+
+<p>And show two ways to see a list of elements. First with grails code:</p>
+
+<div class="highlight"><pre>        <span class="nt">&lt;g:each</span> <span class="na">var=</span><span class="s">"element"</span> <span class="na">in=</span><span class="s">"${elements}"</span><span class="nt">&gt;</span>         
+                <span class="nt">&lt;h2&gt;</span>${element}<span class="nt">&lt;/h2&gt;</span>
+                <span class="nt">&lt;hr&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"span11"</span><span class="nt">&gt;</span>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed neque magna, ...
+                    <span class="nt">&lt;/div&gt;</span>                  
+                <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/g:each&gt;</span>
+</pre></div>
+
+<p>And with sections:</p>
+
+<div class="highlight"><pre>        <span class="nt">&lt;ul&gt;</span>
+          #beginLoop#
+            <span class="nt">&lt;li&gt;</span>Element: <span class="nt">&lt;b&gt;</span>${element}<span class="nt">&lt;/b&gt;</span>
+          #endLoop#
+        <span class="nt">&lt;/ul&gt;</span>
+</pre></div>
+
+<h2>Using the plugin</h2>
+
+<p>Using the <strong>DynamicThemes plugin</strong> in your application requires a few simple steps:</p>
+
+<p>Process your theme and return to view:</p>
+
+<div class="highlight"><pre>    <span class="kt">def</span> <span class="n">theme</span> <span class="o">=</span> <span class="n">preprocessorService</span><span class="o">.</span><span class="na">preprocess</span><span class="o">(</span><span class="n">themeName</span><span class="o">)</span>
+    <span class="o">[</span><span class="nl">heme:</span> <span class="n">theme</span><span class="o">]</span>
+</pre></div>
+
+<p><strong>Optional</strong>: If you want to inject sections (see <em>sections</em>):</p>
+
+<div class="highlight"><pre>    <span class="c1">// Example of sections replace</span>
+    <span class="kt">def</span> <span class="n">elements</span> <span class="o">=</span> <span class="s2">"['Post 1', 'Post 2', 'Post 3']"</span>
+    <span class="kt">def</span> <span class="n">sections</span> <span class="o">=</span> <span class="o">[</span><span class="s2">"#beginLoop#"</span><span class="o">:</span> <span class="s2">"""&lt;g:each var="</span><span class="n">element</span><span class="s2">" in="</span><span class="n">$</span><span class="o">{</span><span class="n">elements</span><span class="o">}</span><span class="s2">"&gt;"""</span><span class="o">,</span> <span class="s2">"""#endLoop#"""</span><span class="o">:</span> <span class="s2">"""&lt;/g:each&gt;"""</span><span class="o">]</span>
+</pre></div>
+
+<p><strong>Optional</strong>: If you want to inject models (see <em>models</em>):</p>
+
+<div class="highlight"><pre>    <span class="kt">def</span> <span class="n">themeName</span> <span class="o">=</span> <span class="s2">"default"</span>
+    <span class="kt">def</span> <span class="n">elementsList</span> <span class="o">=</span> <span class="o">[</span><span class="s1">'Post 1'</span><span class="o">,</span> <span class="s1">'Post 2'</span><span class="o">,</span> <span class="s1">'Post 3'</span><span class="o">]</span>
+    <span class="kt">def</span> <span class="n">model</span> <span class="o">=</span> <span class="o">[</span><span class="nl">ImagesPath:</span> <span class="n">preprocessorService</span><span class="o">.</span><span class="na">getConfigParams</span><span class="o">(</span><span class="n">themeName</span><span class="o">).</span><span class="na">urlFolderImages</span><span class="o">,</span> <span class="nl">elements:</span><span class="n">elementsList</span><span class="o">]</span>
+</pre></div>
+
+<p><strong>Optional</strong>: Example for a snapshot (see <em>more</em>)</p>
+
+<div class="highlight"><pre>    <span class="kt">def</span> <span class="n">snap</span> <span class="o">=</span> <span class="n">preprocessorService</span><span class="o">.</span><span class="na">getConfigParams</span><span class="o">(</span><span class="n">themeName</span><span class="o">).</span><span class="na">urlSnapshot</span>
+</pre></div>
+
+<p><strong>Optional</strong>: Process your theme and return to view with your optional params:</p>
+
+<div class="highlight"><pre>    <span class="kt">def</span> <span class="n">theme</span> <span class="o">=</span> <span class="n">preprocessorService</span><span class="o">.</span><span class="na">preprocess</span><span class="o">(</span><span class="n">themeName</span> <span class="o">,</span> <span class="n">sections</span><span class="o">,</span> <span class="n">model</span><span class="o">)</span>
+</pre></div>
+
+<h2>Using the Tag Library</h2>
+
+<p>To inject a dynamic css in your view use the injectCss tag:</p>
+
+<div class="highlight"><pre>    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"layout"</span> <span class="na">content=</span><span class="s">"main"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;title&gt;</span>cssHowTo<span class="nt">&lt;/title&gt;</span>
+        <span class="nt">&lt;g:injectCss</span> <span class="na">themeName=</span><span class="s">"${themeName}"</span> <span class="na">ImagesPath=</span><span class="s">"true"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;g:injectCss</span> <span class="na">themeName=</span><span class="s">"${themeName}"</span> <span class="na">ImagesPath=</span><span class="s">"false"</span> <span class="na">model=</span><span class="s">"[var1: 'hello']"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+</pre></div>
+
+<p>To inject a dynamic html/gsp in your view use the injectGSP tag: </p>
+
+<div class="highlight"><pre>    <span class="nt">&lt;body&gt;</span>
+        An css and gsp DynamicThemes example. View source code for the css DynamicThemes.
+        <span class="nt">&lt;g:injectGSP</span> <span class="na">instance=</span><span class="s">"${result}"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+</pre></div>
+
+<h2>Parameters</h2>
+
+<p>When using the plugin you can use the next parameters:</p>
+
+<h4>sections</h4>
+
+<p>Sections are code replaced before processing. Example:</p>
+
+<div class="highlight"><pre>        <span class="nt">&lt;ul&gt;</span>
+          #beginLoop#
+            <span class="nt">&lt;li&gt;</span>Element: <span class="nt">&lt;b&gt;</span>${element}<span class="nt">&lt;/b&gt;</span>
+          #endLoop#
+        <span class="nt">&lt;/ul&gt;</span>
+</pre></div>
+
+<p>in your controller replace the secctions with your own code with:</p>
+
+<div class="highlight"><pre>    <span class="c1">// Example of sections replace</span>
+    <span class="kt">def</span> <span class="n">elements</span> <span class="o">=</span> <span class="s2">"['Post 1', 'Post 2', 'Post 3']"</span>
+    <span class="kt">def</span> <span class="n">sections</span> <span class="o">=</span> <span class="o">[</span><span class="s2">"#beginLoop#"</span><span class="o">:</span> <span class="s2">"""&lt;g:each var="</span><span class="n">element</span><span class="s2">" in="</span><span class="n">$</span><span class="o">{</span><span class="n">elements</span><span class="o">}</span><span class="s2">"&gt;"""</span><span class="o">,</span> <span class="s2">"""#endLoop#"""</span><span class="o">:</span> <span class="s2">"""&lt;/g:each&gt;"""</span><span class="o">]</span>
+</pre></div>
+
+<h4>models</h4>
+
+<p>You can inject models in your theme. Example:</p>
+
+<div class="highlight"><pre>    <span class="nt">&lt;g:each</span> <span class="na">var=</span><span class="s">"element"</span> <span class="na">in=</span><span class="s">"${elements}"</span><span class="nt">&gt;</span>         
+                <span class="nt">&lt;h2&gt;</span>${element}<span class="nt">&lt;/h2&gt;</span>
+                <span class="nt">&lt;hr&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"span11"</span><span class="nt">&gt;</span>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed neque magna, ...
+                    <span class="nt">&lt;/div&gt;</span>                  
+                <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/g:each&gt;</span>
+</pre></div>
+
+<p>In your controller use:</p>
+
+<div class="highlight"><pre>    <span class="kt">def</span> <span class="n">themeName</span> <span class="o">=</span> <span class="s2">"default"</span>
+    <span class="kt">def</span> <span class="n">elementsList</span> <span class="o">=</span> <span class="o">[</span><span class="s1">'Post 1'</span><span class="o">,</span> <span class="s1">'Post 2'</span><span class="o">,</span> <span class="s1">'Post 3'</span><span class="o">]</span>
+    <span class="kt">def</span> <span class="n">model</span> <span class="o">=</span> <span class="o">[</span><span class="nl">ImagesPath:</span> <span class="n">preprocessorService</span><span class="o">.</span><span class="na">getConfigParams</span><span class="o">(</span><span class="n">themeName</span><span class="o">).</span><span class="na">urlFolderImages</span><span class="o">,</span> <span class="nl">elements:</span><span class="n">elementsList</span><span class="o">]</span>
+</pre></div>
+
+<h4>others</h4>
+
+<p>You can inject other files. For example the snapshot of the theme with:</p>
+
+<div class="highlight"><pre>        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"hero-unit"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;h2&gt;</span>Snapshot for the theme<span class="nt">&lt;/h2&gt;</span>
+            <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"${snapshot}"</span> <span class="na">style=</span><span class="s">"width:200px"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+<p>In your controller:</p>
+
+<div class="highlight"><pre>    <span class="kt">def</span> <span class="n">snap</span> <span class="o">=</span> <span class="n">preprocessorService</span><span class="o">.</span><span class="na">getConfigParams</span><span class="o">(</span><span class="n">themeName</span><span class="o">).</span><span class="na">urlSnapshot</span>
+</pre></div>
+
+<p>Note: The urlSnapshot is the root of the theme</p>
+
+<h2>Changelog</h2>
+
+<p>;0.1.0 Initial version (November 29, 2012)</p>
       </section>
-    </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Dynamicthemesplugin maintained by <a href="https://github.com/gonzalogarciajaubert">gonzalogarciajaubert</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
     </div>
-
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
-
   </body>
 </html>
