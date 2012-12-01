@@ -85,9 +85,9 @@ dynamicThemes {
 
 You can define values for you development and production enviroment.
 
-# useCacheControl: Override to control the css cached.
-# urlThemes: Relative url for themes.
-# fileSystemPath: Relative file system path for themes. Default is web-app/themes
+- useCacheControl: Override to control the css cached.
+- urlThemes: Relative url for themes.
+- fileSystemPath: Relative file system path for themes. Default is web-app/themes
 
 
 ## Scripts
@@ -114,14 +114,14 @@ If you want full examples, visit [DynamicThemesExample](https://github.com/gonza
 
 Themes are folders with the following example structure:
 
-`
+```groovy
 themeName
-	\icons\*.png
-	\images\*.png
-	themeName.css
-	themeName.html
-	themeName.snapshot.png
-`
+- \icons\*.png
+- \images\*.png
+- themeName.css
+- themeName.html
+- themeName.snapshot.png
+```
 
 The only expected file is themeName.html. You can see two themes examples in the webapp dir: default and default2.
 
@@ -145,7 +145,7 @@ And show two ways to see a list of elements. First with grails code:
 				<hr>
 				<div class="row">
 					<div class="span11">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed neque magna, non suscipit nulla. Etiam sed lacus ut nibh suscipit aliquam sed semper tortor. Vestibulum mollis nibh quam, sed imperdiet felis. Quisque eu tortor in purus convallis euismod. Aenean augue dui, suscipit id consequat id, tempus semper velit. Donec nisl lacus, elementum id tincidunt eget, vehicula et diam. Donec velit mauris, malesuada eu tempus ut, hendrerit vel ante. Ut et sapien eu eros mattis commodo a eget ipsum. Aliquam ac arcu augue. Quisque auctor viverra eros vitae fringilla. Suspendisse ac ipsum eros, at sagittis metus. Quisque nec risus felis, vitae aliquet neque. Suspendisse id nibh tortor, sit amet convallis dolor. Maecenas vestibulum, purus quis tristique tempus, tellus tortor molestie diam, vel dapibus erat nunc vehicula orci. Cras blandit, ante imperdiet pretium imperdiet, velit est bibendum ligula, eget accumsan purus urna et ipsum.
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed neque magna, ...
 					</div>					
 				</div>
 		</g:each>
@@ -168,7 +168,7 @@ Using the **DynamicThemes plugin** in your application requires a few simple ste
 Process your theme and return to view:
 
 ```
-	def theme = preprocessorService.preprocess(themeName , sections, model)
+	def theme = preprocessorService.preprocess(themeName)
 	[heme: theme]
 ```
 
@@ -258,7 +258,7 @@ You can inject models in your theme. Example:
 				<hr>
 				<div class="row">
 					<div class="span11">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed neque magna, non suscipit nulla. Etiam sed lacus ut nibh suscipit aliquam sed semper tortor. Vestibulum m...
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed neque magna, ...
 					</div>					
 				</div>
 		</g:each>
