@@ -23,20 +23,17 @@ log4j = {
     warn   'org.mortbay.log'
 }
 
-grails.views.default.codec="none" // none, html, base64
-grails.views.gsp.encoding="UTF-8"
-
 
 // DynamicThemes
 dynamicThemes {
-    development {
+	development {
 		resourceController.useCacheControl = true			// Override to control the css cached
-		preprocessor.urlThemes = 'themes'					// Relative url for themes. 
+		preprocessor.urlThemes = 'themes'					// Relative url for themes.
 		preprocessor.fileSystemPath = 'web-app/themes'		// Relative file system path for themes. Default is web-app/themes
-    }
-    production {
+	}
+	production {
 		resourceController.useCacheControl = true			// Override to control the css cached
-		preprocessor.urlThemes = 'themes'					// Relative url for themes. 
+		preprocessor.urlThemes = 'themes'					// Relative url for themes.
 		preprocessor.fileSystemPath =  "themes"				// Relative file system path for themes (servletContext)
-    }
+	}
 }

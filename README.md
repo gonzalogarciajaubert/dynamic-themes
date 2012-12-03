@@ -1,4 +1,4 @@
-# DynamicThemes Plugin
+# dynamic-themes Plugin
 
 Author: Gonzalo Garcia Jaubert
 
@@ -6,7 +6,7 @@ Version: 0.1.0
 
 ## Introduction
 
-The **DynamicThemes plugin** allows your Grails application to load and render pages with your own theme ( **folders** with GSP templates and css) dinamically outside the scope of a web request. If you've ever used Tumblr or Wordpress then you know what a **theme** is and how it works.
+The **dynamic-themes plugin** allows your Grails application to load and render pages with your own theme ( **folders** with GSP templates and css) dinamically outside the scope of a web request. If you've ever used Tumblr or Wordpress then you know what a **theme** is and how it works.
 
 You can process models and sections (your own tags) in your themes. 
 
@@ -21,7 +21,7 @@ This plugin provides the following feature:
 ### Further Reading 
 
 * See [DynamicThemesExample](https://github.com/gonzalogarciajaubert/DynamicThemesExample)  application for examples.
-* See [DynamicThemes official page](http://dynamicthemes.dancingrails.com) 
+* See [dynamic-themes official page](http://dynamicthemes.dancingrails.com) 
 * See [blog](http://dancingrails.com)
 * And follow @ggjaubert 
 
@@ -48,7 +48,7 @@ In BuildConfig.groovy, add the dependency to your 'plugins' section:
 ```groovy
 plugins {
        	...
-        	compile ':dynamicthemes:0.1'
+        	compile ':dynamic-themes:0.1'
        	...
     }
 ```
@@ -62,7 +62,7 @@ Note that the version (0.1 in the example above) should be change to refelect th
 **Note: Not avaliable yet. Contribute to http://grails.org/plugins/pending**
 
 
-Simply run the command `grails install-plugin dynamicthemes`. Note that this will install the latest version into the global scope, rather than the compile scope which is slightly cleaner, above.
+Simply run the command `grails install-plugin dynamic-themes`. Note that this will install the latest version into the global scope, rather than the compile scope which is slightly cleaner, above.
 
 ### Configure the plugin
 
@@ -92,10 +92,10 @@ You can define values for you development and production enviroment.
 
 ## Scripts
 
-After installation you can call the DyncamicThemes script **grails DynamicThemes**, which will copy several files into your project. 
+After installation you can call the DyncamicThemes script **grails dynamic-themes**, which will copy several files into your project. 
 
 `
-  grails DynamicThemes
+  grails dynamic-themes
 `
 
 This script will create a themes folder under web-app and copy to themes into it (default and default2).
@@ -163,7 +163,7 @@ And with sections:
 
 ## Using the plugin
 
-Using the **DynamicThemes plugin** in your application requires a few simple steps:
+Using the **dynamic-themes plugin** in your application requires a few simple steps:
 
 Process your theme and return to view:
 
@@ -217,7 +217,7 @@ To inject a dynamic html/gsp in your view use the injectGSP tag:
 
 ```html
 	<body>
-		An css and gsp DynamicThemes example. View source code for the css DynamicThemes.
+		An css and gsp dynamic-themes example. View source code for the css dynamic-themes.
 		<g:injectGSP instance="${result}"/>
 	</body>
 ```
