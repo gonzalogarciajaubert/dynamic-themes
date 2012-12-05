@@ -40,9 +40,6 @@ Installing the plugin can be done in one of two ways:
 #### Installing the plugin using then Grails dependency DSL (Recommended)
 
 
-**Note: Not avaliable yet. Contribute to http://grails.org/plugins/pending**
-
-
 In BuildConfig.groovy, add the dependency to your 'plugins' section:
 
 ```groovy
@@ -57,9 +54,6 @@ Note that the version (0.1 in the example above) should be change to refelect th
 
 
 #### Installing the plugin 'on-the-fly'
-
-
-**Note: Not avaliable yet. Contribute to http://grails.org/plugins/pending**
 
 
 Simply run the command `grails install-plugin dynamic-themes`. Note that this will install the latest version into the global scope, rather than the compile scope which is slightly cleaner, above.
